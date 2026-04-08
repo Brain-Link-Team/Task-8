@@ -34,11 +34,7 @@ public class T8 {
 
         nameField = (JTextField) addComponent("Name", 30, "JTextField");
         emailField = (JTextField) addComponent("Email", 80, "JTextField");
-        passwordField = (JPasswordField) addComponent(
-            "Password",
-            130,
-            "Password"
-        );
+        passwordField = (JPasswordField) addComponent("Password", 130, "Password");
         depField = (JComboBox) addComponent("Department", 180, "comboBox");
 
         mainPanel.add(tree(30));
@@ -55,17 +51,14 @@ public class T8 {
         JComponent field;
 
         switch (type) {
-            default:
-            case "JTextField":
+            default: case "JTextField":
                 field = new JTextField();
                 break;
             case "Password":
                 field = new JPasswordField();
                 break;
             case "comboBox":
-                field = new JComboBox<>(
-                    new String[] { "IT", "Finance", "HR", "Marketing" }
-                );
+                field = new JComboBox<>(new String[] { "IT", "Finance", "HR", "Marketing" });
                 break;
         }
 
@@ -122,10 +115,7 @@ public class T8 {
         String password = new String(passwordField.getPassword());
         String dep = (String) (depField.getSelectedItem());
         if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
-            JOptionPane.showMessageDialog(
-                frame,
-                "Make sure to satsfy all Fields"
-            );
+            JOptionPane.showMessageDialog(frame,"Make sure to satsfy all Fields");
             return;
         }
         if (!email.contains("@") || !email.contains(".com")) {
@@ -133,16 +123,8 @@ public class T8 {
             return;
         }
 
-        JOptionPane.showMessageDialog(
-            frame,
-            "Name: " +
-                name +
-                "\n" +
-                "Email: " +
-                email +
-                "\n" +
-                "Password: " +
-                "password is hidden, subscribe to my twitter to get it" +
+        JOptionPane.showMessageDialog(frame,"Name: " + name + "\n" + "Email: " + email +"\n" +"Password: " +
+                  "password is hidden, subscribe to my twitter to get it" +
                 "\n" +
                 "Department: " +
                 dep
